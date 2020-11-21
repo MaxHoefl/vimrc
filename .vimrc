@@ -59,7 +59,7 @@ set backspace=eol,start
 
 " youcompleteme config
 "let g:ycm_python_binary_path='python3'
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_path_to_python_interpreter = '/Users/mh/.pyenv/shims/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_log_level = 'debug'
@@ -80,6 +80,7 @@ nnoremap <space> za
 
 " Save and run python file
 nnoremap <F9> :w<cr>:!clear; python %<cr>
+command R !./%
 
 " Move lines easily with Shift + Up/Down arrow
 nnoremap <S-k> :m-2<CR>
@@ -90,3 +91,4 @@ map <F2> :NERDTreeToggle<CR>
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
+
