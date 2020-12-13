@@ -3,7 +3,7 @@ my vimrc
 
 ## Installation
 
-The below installation instructions were tested on Ubuntu 18.04.    
+The below installation instructions were tested on Ubuntu 18.04 LTS.
 
 1. Make sure your gcc/g++ version is at least 8 (this is required for 
 the vim plugin `YouCompleteMe`. If it's below (`$gcc --version`) 
