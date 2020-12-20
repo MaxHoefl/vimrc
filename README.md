@@ -5,6 +5,12 @@ my vimrc
 
 The below installation instructions were tested on Ubuntu 18.04 LTS.
 
+0. Make sure your version of vim is at least `8.2`. These are the steps to upgrade:
+
+`$ sudo add-apt-repository ppa:jonathonf/vim`  
+`$ sudo apt update`  
+`$ sudo apt install vim`
+
 1. Make sure your gcc/g++ version is at least 8 (this is required for 
 the vim plugin `YouCompleteMe`. If it's below (`$gcc --version`) 
 run   
