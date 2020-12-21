@@ -38,6 +38,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
 " nerdtree: file browsing
 Plug 'preservim/nerdtree'
+" nerdtree tabs: for better tab handling in nerdtree
+Plug 'jistr/vim-nerdtree-tabs'
 
 call plug#end()
 
