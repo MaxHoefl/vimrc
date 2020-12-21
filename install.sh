@@ -6,7 +6,7 @@ GCC_VERSION=$(gcc --version | head -1 | cut -d ' ' -f 4 | head -c 1)
 
 function check_vim {
     ## Get latest version of vim
-    if [ ! $(echo "$VIM_VERSION < 8.2" | bc -l) ]; then
+    if [ $(echo "$VIM_VERSION < 8.2" | bc -l) ]; then
         echo "Upgrading vim"
         sudo add-apt-repository ppa:jonathonf/vim -y
         sudo apt update
@@ -23,7 +23,7 @@ function check_python_support {
 
 function check_gcc {
     ## Install latest version of gcc / g++
-    if [ ! $(echo "$GCC_VERSION < 8" | bc -l) ]; then
+    if [ $(echo "$GCC_VERSION < 8" | bc -l) ]; then
         echo "Upgrading gcc and g++"
         sudo apt install gcc-8 g++-8 -y
         sudo rm /usr/bin/gcc
@@ -50,7 +50,11 @@ function install_plugins {
     ./install.py
 }
 
+echo "---------- VIM: Upgrade ----------"
 check_vim
+echo "---------- VIM: Check python support ----------"
 check_python_support
+echo "---------- VIM: Check gcc ----------"
 check_gcc
+echo "---------- VIM: Install plugins ----------"
 install_plugins
