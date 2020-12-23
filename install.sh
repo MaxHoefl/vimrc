@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if command vim &> /dev/null; then
+if which vim > /dev/null; then
     VIM_VERSION=$(vim --version | head -1 | cut -d ' ' -f 5)
     HAS_PYTHON3=$(vim --version | grep -c '+python3')
 else
@@ -8,7 +8,7 @@ else
     HAS_PYTHON3=0
 fi
 
-if command gcc &> /dev/null; then
+if which gcc > /dev/null; then
     GCC_VERSION=$(gcc --version | head -1 | cut -d ' ' -f 4 | head -c 1)
 else
     GCC_VERSION='0'
