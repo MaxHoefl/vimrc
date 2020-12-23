@@ -61,7 +61,8 @@ set backspace=eol,start
 
 " youcompleteme config
 "let g:ycm_python_binary_path='python3'
-let g:ycm_path_to_python_interpreter = system('which python3')
+" let g:ycm_path_to_python_interpreter = system('which python3')
+let g:ycm_path_to_python_interpreter = '/home/ubuntu/anaconda3/bin/python3' 
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_log_level = 'debug'
@@ -94,3 +95,4 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 
+let g:nerdtree_tabs_open_on_console_startup=1
