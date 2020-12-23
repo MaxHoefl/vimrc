@@ -1,8 +1,18 @@
 #!/bin/bash
 
-VIM_VERSION=$(vim --version | head -1 | cut -d ' ' -f 5)
-HAS_PYTHON3=$(vim --version | grep -c '+python3')
-GCC_VERSION=$(gcc --version | head -1 | cut -d ' ' -f 4 | head -c 1)
+if command vim &> /dev/null; then
+    VIM_VERSION=$(vim --version | head -1 | cut -d ' ' -f 5)
+    HAS_PYTHON3=$(vim --version | grep -c '+python3')
+else
+    VIM_VERSION='0'
+    HAS_PYTHON3=0
+fi
+
+if command gcc &> /dev/null; then
+    GCC_VERSION=$(gcc --version | head -1 | cut -d ' ' -f 4 | head -c 1)
+else
+    GCC_VERSION='0'
+fi
 
 function check_vim {
     ## Get latest version of vim
@@ -23,7 +33,7 @@ function check_python_support {
 
 function check_gcc {
     ## Install latest version of gcc / g++
-    if [ $(echo "$GCC_VERSION < 8" | bc -l) ]; then
+    if [ $(echo "$GCC_VERSION < 8" | bc -l) ] || [ ! command -v gcc &> /dev/null ]; then
         echo "Upgrading gcc and g++"
         sudo apt install gcc-8 g++-8 -y
         sudo rm /usr/bin/gcc
@@ -51,10 +61,10 @@ function install_plugins {
 }
 
 echo "---------- VIM: Upgrade ----------"
-check_vim
+#check_vim
 echo "---------- VIM: Check python support ----------"
-check_python_support
+#check_python_support
 echo "---------- VIM: Check gcc ----------"
 check_gcc
 echo "---------- VIM: Install plugins ----------"
-install_plugins
+#install_plugins
