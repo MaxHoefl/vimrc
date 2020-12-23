@@ -61,10 +61,10 @@ function install_plugins {
 }
 
 echo "---------- VIM: Upgrade ----------"
-#check_vim
+check_vim
 echo "---------- VIM: Check python support ----------"
-#check_python_support
+check_python_support
 echo "---------- VIM: Check gcc ----------"
 check_gcc
 echo "---------- VIM: Install plugins ----------"
-#install_plugins
+install_plugins
